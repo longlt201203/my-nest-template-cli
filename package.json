@@ -1,6 +1,6 @@
 {
   "name": "my-nest-template-cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "bin": {
     "mynest": "dist/index.js"
@@ -9,10 +9,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && tsc-alias"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "nestjs",
+    "cli"
+  ],
+  "author": "Le Thanh Long [longlt201203@gmail.com]",
+  "repository": {
+    "url": "https://github.com/longlt201203/my-nest-template-cli"
+  },
+  "license": "MIT",
+  "description": "My Nest Template CLI",
   "devDependencies": {
     "@types/node": "^22.10.7",
     "tsc-alias": "^1.8.10",
