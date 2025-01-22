@@ -27,13 +27,13 @@ export const prjCmd = new Command("prj")
       throw new Error(`Folder ${projectFolderPath} already exists`);
     }
 
-    fs.mkdirSync(projectFolderPath);
+    fs.mkdirSync(projectFolderPath, { recursive: true });
     console.log("Cloning template...");
     await execPromise(
       `git clone https://github.com/longlt201203/my-nest-template.git .`,
       { cwd: projectFolderPath }
     );
-    fs.rmdirSync(path.resolve(projectFolderPath, ".git"), { recursive: true });
+    fs.rmSync(path.resolve(projectFolderPath, ".git"), { recursive: true });
     console.log("Done!");
     console.log("Project created at", projectFolderPath);
   });
