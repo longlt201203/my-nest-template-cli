@@ -1,12 +1,14 @@
+export default `
+
 version: "3.9"
 services:
   <%= projectName %>_mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASS}
-      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: \${DB_PASS}
+      MYSQL_DATABASE: \${DB_NAME}
     ports:
-      - ${DB_PORT}:3306
+      - \${DB_PORT}:3306
     volumes:
       - <%= projectName %>_db_vol:/var/lib/mysql
     networks:
@@ -19,3 +21,5 @@ networks:
 
 volumes:
   <%= projectName %>_db_vol:
+  
+`;

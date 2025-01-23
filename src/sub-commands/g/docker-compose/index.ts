@@ -13,11 +13,11 @@ export const dockerComposeCmd = new Command("docker-compose")
       throw new Error("No package name found in package.json");
     }
 
-    const presetPath = `docker-compose-presets/${preset}.ejs`;
-    if (!fs.existsSync(presetPath)) {
+    const presetData = await import(`./presets/${preset}`);
+    if (!presetData && !presetData.default) {
       throw new Error(`Preset ${preset} not found`);
     }
-    const presetRendered = await ejs.renderFile(presetPath, {
+    const presetRendered = ejs.render(presetData.default.trim(), {
       projectName: pkg.name,
     });
     const composePath = path.resolve(
