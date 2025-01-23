@@ -2,7 +2,7 @@ import { input } from "@inquirer/prompts";
 import { Command } from "commander";
 import * as path from "path";
 import * as fs from "fs";
-import { execPromise } from "@utils";
+import { execPromise } from "../../../utils";
 
 export const prjCmd = new Command("prj")
   .description("Project generator")

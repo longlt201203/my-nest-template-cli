@@ -1,4 +1,4 @@
-import { readPackageJson } from "@utils";
+import { readPackageJson } from "../../../utils";
 import { Command } from "commander";
 import * as fs from "fs";
 import * as path from "path";
@@ -13,7 +13,7 @@ export const dockerComposeCmd = new Command("docker-compose")
       throw new Error("No package name found in package.json");
     }
 
-    const presetPath = `docker-presets/${preset}.ejs`;
+    const presetPath = `docker-compose-presets/${preset}.ejs`;
     if (!fs.existsSync(presetPath)) {
       throw new Error(`Preset ${preset} not found`);
     }
