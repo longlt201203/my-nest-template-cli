@@ -28,6 +28,7 @@
   "dependencies": {
     "@inquirer/prompts": "^7.2.3",
     "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10"
   }
 }

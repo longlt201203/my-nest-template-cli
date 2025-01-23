@@ -2,8 +2,9 @@
 
 import { program } from "commander";
 import { gCmd } from "./sub-commands/g";
+import { utilsCmd } from "./sub-commands/utils";
 
-program.addCommand(gCmd);
+program.addCommand(gCmd).addCommand(utilsCmd);
 
 program.parse();
 
