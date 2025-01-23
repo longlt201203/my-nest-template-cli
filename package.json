@@ -20,12 +20,14 @@
   "license": "MIT",
   "description": "My Nest Template CLI",
   "devDependencies": {
+    "@types/ejs": "^3.1.5",
     "@types/node": "^22.10.7",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.7.3"
   },
   "dependencies": {
     "@inquirer/prompts": "^7.2.3",
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "ejs": "^3.1.10"
   }
 }

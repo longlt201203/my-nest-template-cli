@@ -34,6 +34,11 @@ export const prjCmd = new Command("prj")
       { cwd: projectFolderPath }
     );
     fs.rmSync(path.resolve(projectFolderPath, ".git"), { recursive: true });
+    const pkgPath = path.resolve(projectFolderPath, "package.json");
+    const pkgStr = fs.readFileSync(pkgPath).toString();
+    const pkg = JSON.parse(pkgStr);
+    pkg.name = name;
+    fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
     console.log("Done!");
     console.log("Project created at", projectFolderPath);
   });
