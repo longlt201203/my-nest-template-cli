@@ -1,5 +1,4 @@
 export default `
-
 versions: '3.9
 services:
   <%= projectName %>_zipkin:
@@ -13,5 +12,4 @@ networks:
   <%= projectName %>_net:
     name: <%= projectName %>_net
     driver: bridge
-
 `;

@@ -1,5 +1,4 @@
 export default `
-
 import { config } from "dotenv";
 
 config();
@@ -11,5 +10,4 @@ export const Env = {
 } as const;
 
 console.log(Env);
-
 `;

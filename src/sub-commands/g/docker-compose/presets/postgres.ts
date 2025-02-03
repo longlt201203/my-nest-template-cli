@@ -1,5 +1,4 @@
 export default `
-
 versions: '3.9
 services:
   <%= projectName %>_db:
@@ -21,5 +20,4 @@ networks:
 
 volumes:
   <%= projectName %>_db_vol:
-
 `;

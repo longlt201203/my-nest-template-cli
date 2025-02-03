@@ -1,5 +1,4 @@
 export default `
-
 version: '3.9'
 services:
   <%= projectName %>_mssql:
@@ -21,5 +20,4 @@ networks:
   <%= projectName %>_net:
     name: <%= projectName %>_net
     driver: bridge
-
 `;
