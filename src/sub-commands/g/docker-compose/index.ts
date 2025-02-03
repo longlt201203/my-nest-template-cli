@@ -3,6 +3,7 @@ import { Command } from "commander";
 import * as fs from "fs";
 import * as path from "path";
 import * as ejs from "ejs";
+import { lsCmd } from "./ls";
 
 export const dockerComposeCmd = new Command("docker-compose")
   .description("Docker compose generator")
@@ -26,4 +27,5 @@ export const dockerComposeCmd = new Command("docker-compose")
     );
     fs.writeFileSync(composePath, presetRendered);
     console.log(`Docker compose file generated at ${composePath}`);
-  });
+  })
+  .addCommand(lsCmd);
