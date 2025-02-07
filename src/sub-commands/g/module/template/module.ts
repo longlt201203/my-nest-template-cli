@@ -1,5 +1,4 @@
 export default `
-
 import { Module } from "@nestjs/common";
 import { <%= moduleCapitalizedName %>Service } from "./<%= moduleName %>.service";
 import { <%= moduleCapitalizedName %>Controller } from "./<%= moduleName %>.controller";
@@ -10,5 +9,4 @@ import { <%= moduleCapitalizedName %>Controller } from "./<%= moduleName %>.cont
     controllers: [<%= moduleCapitalizedName %>Controller]
 })
 export class <%= moduleCapitalizedName %>Module {}
-
 `;
