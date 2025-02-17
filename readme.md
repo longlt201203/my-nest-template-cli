@@ -37,5 +37,11 @@ _Note:_ `mynest g docker-compose ls` to list all available presets
 1. Edit `src/utils/env.ts` file base on `.env.example`
 
 ```shell
-mynest g utils update-env
+mynest utils update-env
+```
+
+2. Add `FrontModule` for deploy Front-End within API Server
+
+```shell
+mynest utils deploy-front
 ```
