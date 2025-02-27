@@ -31,7 +31,7 @@ export const prjCmd = new Command("prj")
     fs.mkdirSync(projectFolderPath, { recursive: true });
     console.log("Cloning template...");
 
-    if (options.s) {
+    if (options.ssh) {
       await execPromise(
         `git clone git@github.com:longlt201203/my-nest-template.git .`,
         { cwd: projectFolderPath }
