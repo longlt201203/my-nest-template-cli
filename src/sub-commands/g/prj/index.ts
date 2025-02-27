@@ -7,7 +7,8 @@ import { execPromise } from "../../../utils";
 export const prjCmd = new Command("prj")
   .description("Project generator")
   .argument("[name]", "Project name")
-  .action(async (name) => {
+  .option("-s, --ssh", "Clone the project with SSH")
+  .action(async (name, options) => {
     name =
       name ||
       (await input({
@@ -29,10 +30,18 @@ export const prjCmd = new Command("prj")
 
     fs.mkdirSync(projectFolderPath, { recursive: true });
     console.log("Cloning template...");
-    await execPromise(
-      `git clone https://github.com/longlt201203/my-nest-template.git .`,
-      { cwd: projectFolderPath }
-    );
+
+    if (options.s) {
+      await execPromise(
+        `git clone git@github.com:longlt201203/my-nest-template.git .`,
+        { cwd: projectFolderPath }
+      );
+    } else {
+      await execPromise(
+        `git clone https://github.com/longlt201203/my-nest-template.git .`,
+        { cwd: projectFolderPath }
+      );
+    }
     fs.rmSync(path.resolve(projectFolderPath, ".git"), { recursive: true });
     const pkgPath = path.resolve(projectFolderPath, "package.json");
     const pkgStr = fs.readFileSync(pkgPath).toString();
